@@ -1,6 +1,6 @@
 # 番茄钟 (Pomodoro Timer)
 
-一个基于 Python 和 Tkinter 的简易番茄钟程序，帮助用户强制黑屏，多多休息。
+一个基于 Python 和 Tkinter 的简易番茄钟程序，帮助用户**强制黑屏**，多多休息。
 
 ---
 
@@ -27,4 +27,5 @@
 
 两种，一种是把`pomodoro.py`拷贝下来，然后执行`pyinstaller --onefile pomodoro.py`进行编译，再点构建出来的.exe就能用了。
 
-另一种是直接下载.exe，（此处应该有链接）。
+另一种是直接下载.exe，[下载地址](https://github.com/Urfread/pomodoro/releases/tag/v0.1.0)。只下载这个`pomodoro.exe`就行，我做成单文件的了。
+
