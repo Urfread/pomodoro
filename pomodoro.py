@@ -5,6 +5,8 @@ from Marquee import RectMarquee
 WORK_SECONDS = 30*60   # 工作时间，实际 30 分钟
 REST_SECONDS = 10*60    # 休息时间，实际 10 分钟
 
+# WORK_SECONDS = 1   # 工作时间，测试 1秒
+# REST_SECONDS = 5    # 休息时间，实际 5秒
 
 def start_work():
     """进入工作阶段（小窗口倒计时）"""
@@ -44,7 +46,8 @@ def start_rest():
     rest_root.attributes("-fullscreen", True)  # 全屏显示
     rest_root.attributes("-topmost", True)     # 窗口始终置顶
     rest_root.configure(bg="black")            # 背景设为黑色
-
+    # 设置黑色为透明
+    rest_root.attributes("-alpha", 0.5)
     # === 跑马灯挂载 ===
     marquee = RectMarquee(
         rest_root,
