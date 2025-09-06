@@ -2,8 +2,8 @@ import tkinter as tk  # 导入 Tkinter 库，用于创建 GUI 窗口
 from Marquee import RectMarquee
 
 # 时间参数（单位：秒）
-WORK_SECONDS = 1   # 工作时间，实际 30 分钟
-REST_SECONDS = 1    # 休息时间，实际 10 分钟
+WORK_SECONDS = 30*60   # 工作时间，实际 30 分钟
+REST_SECONDS = 10*60    # 休息时间，实际 10 分钟
 
 
 def start_work():
