@@ -1,8 +1,9 @@
 import tkinter as tk  # 导入 Tkinter 库，用于创建 GUI 窗口
+from Marquee import RectMarquee
 
 # 时间参数（单位：秒）
-WORK_SECONDS = 1500   # 工作时间，实际 25 分钟
-REST_SECONDS = 300    # 休息时间，实际 5 分钟
+WORK_SECONDS = 1   # 工作时间，实际 30 分钟
+REST_SECONDS = 1    # 休息时间，实际 10 分钟
 
 
 def start_work():
@@ -44,8 +45,18 @@ def start_rest():
     rest_root.attributes("-topmost", True)     # 窗口始终置顶
     rest_root.configure(bg="black")            # 背景设为黑色
 
+    # === 跑马灯挂载 ===
+    marquee = RectMarquee(
+        rest_root,
+        num_blocks=100,   # 总格数
+        speed=2,          # 跳动速度
+        block_size=40,    # 方块大小
+        ratio=0.1,         # 点亮比例
+        lines=3           # 来示 4 条灯带
+    )
+    
     # 创建大字体倒计时标签，白色文字
-    label = tk.Label(rest_root, text="", font=("Arial", 72), fg="white", bg="black")
+    label = tk.Label(marquee.canvas, text="", font=("Arial", 72), fg="white", bg="black")
     label.pack(expand=True)
 
     seconds = REST_SECONDS  # 初始化倒计时秒数
